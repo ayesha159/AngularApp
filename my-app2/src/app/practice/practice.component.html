@@ -1,0 +1,70 @@
+<style>
+
+    table, td {
+      border: 1px solid black;
+      width: 25%;
+      text-align: center;
+    }
+    tr:hover {background-color: #f5f5f5;}
+    
+    </style>
+
+    <h1 class="bg-primary"> Welcome to my app </h1>
+    <div [ngClass]="'one'">Learning static ngClass</div>
+    <div [ngClass]="[clsName,clsName2]">Learning dynamic ngClass</div>
+    <div [ngClass]="{'one':true,'two':false}">Learning ngClass with expressions</div>
+
+    <h4>Learning ngStyle</h4>
+    <h3 [ngStyle]="{'color':colorName,'background-color':bgColor}"> Learning Angular is fun!!!</h3>
+    <button (click)="readMe()" > Click me!!! </button>
+    <div> If statements</div>
+    <div *ngIf="ShowMessage" [ngStyle]='{color:colorName}'> Show this message from If true statements </div>
+    <div *ngIf="ShowMessage; then showThenMessage; else showElseMessage">Show Message</div>
+    <ng-template #showThenMessage>show Then Message</ng-template>
+    
+    <ng-template #showElseMessage>show Else Message</ng-template>
+    <h4> ngSwitch Example</h4>
+    <div [ngSwitch]="SwitchValue">
+        <div *ngSwitchCase="'one'">Value is passed :1</div>
+        <div *ngSwitchCase="'two'">Value is passed :2</div>
+        <div *ngSwitchCase="'three'">Value is passed :3</div>
+        <div *ngSwitchCase="4">Value is passed :4</div>
+        <div *ngSwitchDefault>This is the default value</div>
+    </div>
+    <h4> ngFor Example</h4>
+    <table class="table">
+      <tr>
+        <th>  userId</th>
+          <th>  firstName </th>
+          <th>  Index</th>
+          <th>  First</th>
+          <th>  Last</th>
+          <th>  Odd</th>
+          <th>  even</th>
+    
+      </tr>
+      
+      <tr *ngFor="let user of users; index as i; first as f; last as l; odd as o; even as ev ">
+        <td>
+              {{user.userId}}
+        </td>
+        <td>
+               {{user.firstName}}
+        </td>
+        <td>
+               {{i}}
+        </td>
+           <td>
+               {{f}}
+          </td>
+          <td>
+              {{l}}
+           </td>
+           <td>
+              {{o}}
+    </td>
+          <td>
+            {{ev}}
+          </td>
+      </tr>
+    </table>

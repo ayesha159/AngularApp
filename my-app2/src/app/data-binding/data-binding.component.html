@@ -1,0 +1,17 @@
+<h1 class="bg-primary"> Welcome to my app </h1>
+<h4>Intrpolation</h4>
+<div> {{subTitle}} </div>
+<div>{{number}}</div>
+<div>{{users.userId}} {{users.firstName}}</div>
+<h4>Property Binding</h4>
+<div [ngStyle]="{'color':colorval}"> Learning Angular is fun!!!</div>
+<p [innerHTML]= 'subTitle'></p>
+<div [ngClass]="'one'"> Aysha Jabbar</div>
+<input [placeholder]="placeVal">
+<h4>Attribute Binding</h4>
+<a [href]="hrefVal" [attr.updatedlink]='updatedlink' [attr.datalink]='updatedlink'>Google</a>
+<h4>event binding</h4>
+
+<input (focus)="showConsole();"/>
+<button (click)="showAlert('ayesha');">click me!!!</button>
+
